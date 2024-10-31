@@ -1,10 +1,10 @@
-FROM openjdk:23-jdk
-
-COPY . .
+FROM eclipse-temurin:23
 
 WORKDIR /SportTracker
-CMD ["./gradlew", "clean", "bootJar"]
-COPY build/libs/*.jar app.jar
+
+COPY . ./
+
+RUN ./gradlew clean bootJar
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["sh", "-c", "java -jar build/libs/*.jar"]
