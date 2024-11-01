@@ -1,5 +1,5 @@
-set PROJECT_NAME="sport-tracker"
-set FILE="docker-compose.yml"
+set PROJECT_NAME="postgresql"
+set FILE="database-compose.yml"
 
 docker-compose -p %PROJECT_NAME% -f %FILE% stop
 docker-compose -p %PROJECT_NAME% -f %FILE% rm -f
